@@ -16,7 +16,7 @@ public class GCD {
   }
 
   private static int gcdEuclidean(int a, int b) {
-    System.out.println("Euclidean calculation:");
+//    System.out.println("Euclidean calculation:");
     if (a == b) {
       return a;
     } else {
@@ -31,7 +31,7 @@ public class GCD {
           break;
         } else {
           int temp = a % b;
-          System.out.println("temp = " + temp);
+//          System.out.println("temp = " + temp);
           if (temp == 0) {
             res = b;
             break;
@@ -50,7 +50,7 @@ public class GCD {
     int a = scanner.nextInt();
     int b = scanner.nextInt();
 
-    System.out.println(gcd_naive(a, b));
+    System.out.println(gcdEuclidean(a, b));
 
 //    debug();
   }
