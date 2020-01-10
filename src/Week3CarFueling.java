@@ -11,7 +11,7 @@ public class Week3CarFueling {
         int previous = 0;
         int currentStop = 0;
         for (int i = 0; i < stops.length; i++) {
-            System.out.print("Step "+i+":");
+//            System.out.print("Step "+i+":");
             if ((stops[i]-currentStop) >= tank) {
 //                System.out.println(String.format("Stop=%d; current=%d, previous=%d", stops[i],
 //                        currentStop, previous));
