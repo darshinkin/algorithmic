@@ -17,7 +17,7 @@ public class Week3FractionalKnapsack {
     }
 
     private static double getOptimalValue(int capacity, int[] values, int[] weights) {
-        Double value = new Double(0);
+        Double value = 0d;
         Map<Double, Item> items = createItems(values, weights);
         for (Map.Entry<Double, Item> entry: items.entrySet()) {
             if (capacity > entry.getValue().weight) {
