@@ -2,7 +2,13 @@ import java.util.*;
 import java.io.*;
 
 public class Week3CarFueling {
-    static int computeMinRefills(int dist, int tank, int[] stops) {
+    static int computeMinRefills(int dist, int tank, int[] stopsSrc) {
+        int stopsLenght = stopsSrc.length + 1;
+        int[] stops = new int[stopsLenght];
+        for (int i = 0; i < stopsSrc.length; ++i) {
+            stops[i] = stopsSrc[i];
+        }
+        stops[stopsLenght-1] = dist;
         if (tank >= dist) {
             return 0;
         }
@@ -22,7 +28,7 @@ public class Week3CarFueling {
                 }
                 ++count;
 //                System.out.println("count:" + count);
-                currentStop = previous;
+                currentStop = (stops[i]-currentStop) == tank ? stops[i] : previous;
                 continue;
             }
 //            System.out.println(String.format("Skipped: %d, (stops[i]-currentStop)=%d", stops[i], (stops[i]-currentStop)));
