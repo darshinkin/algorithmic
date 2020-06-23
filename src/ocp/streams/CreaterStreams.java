@@ -19,7 +19,17 @@ public class CreaterStreams {
 //        primitiveStreams();
 //        advancedConcepts();
 //        collectors();
-        maps();
+//        maps();
+        partitioningBy();
+    }
+
+    private static void partitioningBy() {
+
+        Stream<Integer> stream4 = Stream.of(1,3,6,7);
+        Map<Boolean, List<Integer>> result = stream4.collect(Collectors.partitioningBy((i -> i>5)
+                , Collectors.toList()));
+        System.out.println(result);
+
     }
 
     private static void maps() {
